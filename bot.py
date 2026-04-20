@@ -117,7 +117,7 @@ async def handle_video(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
         await status.edit_text("📤 Sending cleaned video…")
 
         # Send back — use send_document so Telegram doesn't re-compress
-        out_name = f"{random_id()}.{ext}"
+        out_name = f"clean_{random_id()}.{ext}"
         with open(out_path, "rb") as f:
             await msg.reply_document(
                 document=f,
